@@ -3,26 +3,31 @@
 This is task for Camel Code Company with a simple but secure API process of pre-registration of a user with subscribing for new plans with optional addons,
 
 The API comes with:
-1- security against XSS attacks with validation and filtration of each coming request against malicious scripts.
-2- against DDoS attacks with applying rate limit layer with 10 requests allowed per IP per 60 seconds.
-3- With agreement in the future with frontend team, CORS for API can be added for a specific Frontend URL so that only our frontend can use our API.
 
-The Task comes with:
+- security against XSS attacks with validation and filtration of each coming request against malicious scripts.
+- against DDoS attacks with applying rate limit layer with 10 requests allowed per IP per 60 seconds.
+- With agreement in the future with frontend team, CORS for API can be added for a specific Frontend URL so that only our frontend can use our API.
+- [API Postman Documentation](https://documenter.getpostman.com/view/41018314/2sAYXBGfNe) so it can help the frontend team to use know which endpoints and how to use it more easily.
 
-1- Optimized process for saving new details of each user, separating each step with caching user data for specific amount of time = 30 mins,
+## The Task comes with:
+
+- Optimized process for saving new details of each user, separating each step with caching user data for specific amount of time = 30 mins,
 during that time each user will receive a unique UUID since it is a registration process with no-logging-user-JWT-token to apply authentication for specific user without logging in.
 
-2- If a user passed the 30 mins period of time, he must generate a new UUID and the UUID will be invalid to use.
+- If a user passed the 30 mins period of time, he must generate a new UUID and the UUID will be invalid to use.
 
-3- If a user tried to user our API for example to put the data of the second or third step without the first step, it will run a session error for him/her and they must start with the first step.
+- If a user tried to user our API for example to put the data of the second or third step without the first step, it will run a session error for him/her and they must start with the first step.
 
-4- Username comes with regex that is suitable for storing only valid names, with any letter of any language with only white spacing allowance, keeping in mind if user only sent white spaces it will run an error for them.
+- Username comes with regex that is suitable for storing only valid names, with any letter of any language with only white spacing allowance, keeping in mind if user only sent white spaces it will run an error for them.
+
+- Data won't be saved in our database of any user until he/she completes the whole process of registration, to avoid filling the DB with uncompleted useless data.
 
 
-What can be applied in the future if required:
-1- The ability to enhance the process by encrypting the UUID for each user to be secure against MITM attacks.
-2- Sending mails after completing the whole process using nodemailer or sending sms texts for there phone number using twilio service, to make the user verify his registration later with entering the password.
-3- Applying real-time caching data with each input event the user will do in the frontend applying techniques like debouncing and throttling so the user data will be cached to be saved later for every 5 seconds for example, that will be extremely crucial if the registration process has more steps.
+## What can be applied in the future if required:
+
+- The ability to enhance the process by encrypting the UUID for each user to be secure against MITM attacks.
+- Sending mails after completing the whole process using nodemailer or sending sms texts for there phone number using twilio service, to make the user verify his registration later with entering the password.
+- Applying real-time caching data with each input event the user will do in the frontend applying techniques like debouncing and throttling so the user data will be cached to be saved later for every 5 seconds for example, that will be extremely crucial if the registration process has more steps.
 
 
 
