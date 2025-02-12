@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"محمد\",\r\n    \"email\": \"asdf3@gmail.com\",\r\n    \"phone\": \"+14155552671\"\r\n}",
+					"raw": "{\r\n    \"name\": \"محمد\",\r\n    \"email\": \"asdf3@gmail.com\",\r\n    \"phone\": \"+201016017113\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -32,7 +32,8 @@
 						"register",
 						"step1"
 					]
-				}
+				},
+				"description": "Here will be the first step of the registration process,  \nthe frontend will send request with name, phone, and email\n\nname: must be only letters of any language with only white space allowance.  \n  \nemail: must be a valid email of any domain, and must be unique and not used twice for more than one user.  \n  \nphone: must be a valid international phone number that starts with +.\n\nafter that the data if calid will be cached on our backend server for 30 mins, with response uuid that is unique for each user.\n\na user cannot proceed the rest of steps without a valid uuid for non-logging authentation.\n\n**note:  \nif it passes more that 30 mins from generating the uuid of user from first step, the uuid will be invalid and returns with error:  \n\"Invalid Session\""
 			},
 			"response": []
 		},
@@ -62,7 +63,8 @@
 						"register",
 						"step2"
 					]
-				}
+				},
+				"description": "Here is the second step of our process:\n\nhere the frontend team can send request with the choose plan name and biling_cycle \\[ \"monthly\", \"yearly\"\\]  \nwith providing the uuid generated from the first step to make sure for data consistancy and avoid any missing data of any steps by mistake.  \n\n**note:  \nif it passes more that 30 mins from generating the uuid of user from first step, the uuid will be invalid and returns with error:  \n\"Invalid Session\""
 			},
 			"response": []
 		},
@@ -92,7 +94,8 @@
 						"register",
 						"step3"
 					]
-				}
+				},
+				"description": "Here is the third step:  \n  \nhere the frontend team will send the uuid of user that is generated from first step with the selected addons.  \n  \n**note:  \nif it passes more that 30 mins from generating the uuid of user from first step, the uuid will be invalid and returns with error:  \n\"Invalid Session\""
 			},
 			"response": []
 		},
@@ -122,7 +125,8 @@
 						"register",
 						"complete"
 					]
-				}
+				},
+				"description": "Final step:  \n  \nhere the final step of our registration process, the frontend team will only send a valid uuid of a user, so that in this step the data will be stored in our database, without this step the previous data is only cached for 30 mins and not stored permanently."
 			},
 			"response": []
 		},
@@ -256,7 +260,7 @@
 			"response": []
 		},
 		{
-			"name": "Post New Addon List Copy",
+			"name": "Post New Addon List",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -285,7 +289,7 @@
 			"response": []
 		},
 		{
-			"name": "Update Addon List Copy",
+			"name": "Update Addon List",
 			"request": {
 				"method": "PUT",
 				"header": [],
@@ -315,7 +319,7 @@
 			"response": []
 		},
 		{
-			"name": "Delete Addon List Copy",
+			"name": "Delete Addon List",
 			"request": {
 				"method": "DELETE",
 				"header": [],
